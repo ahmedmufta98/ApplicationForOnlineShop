@@ -1,0 +1,23 @@
+﻿@model  ShipperInputVM
+@{
+    ViewData["Title"] = "AddShipper";
+}
+
+<h1>Add Shipper</h1>
+<form action="AddShipper" method="post" enctype="multipart/form-data">
+    <div>
+        <input asp-for="Name" type="text" placeholder="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <input type="text" name="PhoneNumber" placeholder="Phone number" />
+        <span asp-validation-for="PhoneNumber"></span>
+    </div>
+    <div>
+        <input type="file" asp-for="Photo" class="custom-file" />
+        <label class="custom-file-label">Choose file...</label><br />
+    </div>
+    <button class="btn btn-warning">Add Shipper</button>
+</form>
+
+

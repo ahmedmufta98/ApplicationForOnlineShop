@@ -1,0 +1,31 @@
+@model CategoryInputViewModel
+
+
+
+<section class="main-content">
+    <div class="row">
+        <div class="span5">
+            <h4 class="title"><span class="text"><strong>Add Category</strong> Form</span></h4>
+
+            <form asp-controller="Admin" asp-action="AddCategory" method="post">
+
+                <fieldset>
+                    <div class="control-group">
+                        <label asp-for="Name"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="actions"><input tabindex="9" class="btn btn-warning" type="submit" value="Add">
+                    
+                    </div>
+                </fieldset>
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+</section>

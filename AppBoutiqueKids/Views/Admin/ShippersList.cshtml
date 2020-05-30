@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Shipper>
+
+<h1>Shippers List</h1>
+
+<div class="control-group">
+    <table class="table">
+        <tr>
+            <td>
+                <p>
+                    <a asp-controller="Admin" asp-action="AddShipper" class="btn btn-warning">Add Shipper</a>
+                </p>
+            </td>
+            <td>
+                <p>
+                    <a asp-controller="Admin" asp-action="AdminHomePage" class="btn btn-warning">Back</a>
+                </p>
+            </td>
+        </tr>
+    </table>
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Logo</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.PhoneNumber</td>
+                    <td><img src="~/images/@item.Photo" style="width:100px ; height:100px" asp-append-version="true" /></td>
+                    <td><a class="btn btn-danger" asp-controller="Admin" asp-action="DeleteShipper" asp-route-id="@item.Id">Delete</a></td>
+                    <td><a class="btn btn-primary" asp-controller="Admin" asp-action="UpdateShipper" asp-route-id="@item.Id">Edit</a></td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+</div>
